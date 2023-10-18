@@ -1,7 +1,6 @@
 site_name: meel0wx
 theme:
   name: material
-  theme: img/meel0wx.png
   features:
     - navigation.tabs
     - navigation.sections

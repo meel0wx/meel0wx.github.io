@@ -18,8 +18,45 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "5693e9adfc2f8938",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "writeup/internship/hidrogen.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "dded2deaa1995921",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "writeup/internship/hidrogen.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8ca77ba0c667804c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "writeup/internship/hidrogen.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -85,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "writeup/internship/hidrogen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "writeup/internship/hidrogen.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "writeup/internship/hidrogen.md"
               }
             }
           }
@@ -146,9 +183,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b870eb763c81bd52",
+  "active": "b52d9e4f95652efd",
   "lastOpenFiles": [
-    "volatility.md",
-    "index.md"
+    "writeup/hackthebox/visual.md",
+    "writeup/hackthebox/drive.md",
+    "img/meel0wx.ico",
+    "img/meel0wx.png",
+    "img",
+    "writeup/internship/hidrogen.md",
+    "writeup/internship",
+    "writeup/hackthebox",
+    "writeup hackthebox",
+    "index.md",
+    "writeup",
+    "writeup.md",
+    "volatility.md"
   ]
 }
