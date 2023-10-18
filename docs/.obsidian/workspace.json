@@ -30,33 +30,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "dded2deaa1995921",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "writeup/internship/hidrogen.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8ca77ba0c667804c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "writeup/internship/hidrogen.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,19 +159,31 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b52d9e4f95652efd",
+  "active": "5693e9adfc2f8938",
   "lastOpenFiles": [
+    "images/writeup/internship/hidrogen/web.PNG",
+    "images/writeup/internship/hidrogen/hidrogen.PNG",
+    "images/writeup/internship/hidrogen/hidrogen.PNG - Shortcut.lnk",
+    "Pasted image 20231018142902.png",
+    "images/writeup/internship/hidrogen/challenge.PNG",
+    "images/writeup/internship/hidrogen/web.png.~tmp",
+    "images/writeup/internship/hidrogen/web.png",
+    "writeup/internship/hidrogen.md",
+    "img/writeup/internship/hidrogen/web.png.md",
+    "img/writeup/internship/hidrogen",
+    "img/writeup/internship",
+    "img/writeup",
+    "img",
+    "images/writeup/internship/hidrogen/web.png.md",
+    "images/writeup/internship/hidrogen",
+    "images/writeup/internship",
+    "images/writeup",
+    "images",
+    "image/hidrogen/Pasted image 20231018133025.png",
+    "index.md",
     "writeup/hackthebox/visual.md",
     "writeup/hackthebox/drive.md",
-    "img/meel0wx.ico",
     "img/meel0wx.png",
-    "img",
-    "writeup/internship/hidrogen.md",
-    "writeup/internship",
-    "writeup/hackthebox",
-    "writeup hackthebox",
-    "index.md",
-    "writeup",
     "writeup.md",
     "volatility.md"
   ]

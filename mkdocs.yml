@@ -1,4 +1,6 @@
 site_name: meel0wx
+plugins:
+  - tags
 theme:
   name: material
   features:
@@ -12,6 +14,11 @@ theme:
     - content.code.annotation
     - content.code.copy
   language: en
+  icon:
+    tag:
+      html: fontawesome/brands/html5
+      js: fontawesome/brands/js
+      css:  fontawesome/brands/css3
   palette:
     - scheme: default
       toggle:
@@ -34,6 +41,10 @@ extra:
       link: https://twitter.com/meel0wx
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/abdullahalbaihaqi
+  tags:
+    HTML5: html
+    JavaScript: js
+    CSS: css
 
 markdown_extensions:
   - pymdownx.highlight:
