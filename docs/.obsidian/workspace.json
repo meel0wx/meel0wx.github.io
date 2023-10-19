@@ -18,8 +18,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c211b64abf7235b8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/iot hacking/tools.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "cf25e4a68a757d30",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "writeup/random/hidrogen.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -146,33 +171,42 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b870eb763c81bd52",
+  "active": "cf25e4a68a757d30",
   "lastOpenFiles": [
+    "notes/web exploitation/web pentest checklist.md",
+    "notes/iot hacking/tools.md",
+    "notes/forensics/volatility.md",
+    "writeup/random/hidrogen.md",
+    "notes/binary exploitation",
+    "notes/iot hacking",
+    "notes/boot2root",
+    "notes/cryptography",
+    "notes/web exploitation",
+    "notes/forensics",
+    "notes/reverse engineering",
+    "notes/forensics/reverse engineering",
+    "writeup/hackthebox/hard/drive.md",
+    "writeup/hackthebox/hard",
+    "writeup/hackthebox/insane",
+    "writeup/hard/drive.md",
+    "writeup/hackthebox/medium/visual.md",
+    "writeup/hackthebox/easy/analytics.md",
+    "writeup/hackthebox/analytics.md",
+    "writeup/random/nitrogen.md",
+    "notes/volatility.md",
     "images/writeup/internship/hidrogen/theend.gif",
-    "images/writeup/internship/hidrogen/theend.gif.crdownload",
     "images/writeup/internship/hidrogen/getin2.gif",
-    "images/writeup/internship/hidrogen/getin2.gif.crdownload",
     "images/writeup/internship/hidrogen/in.gif",
     "index.md",
-    "writeup/random/hidrogen.md",
     "images/writeup/internship/hidrogen/wordpressdashboard.PNG",
     "images/writeup/internship/hidrogen/wordpresslogin.PNG",
     "Pasted image 20231018142902.png",
     "images/writeup/internship/hidrogen/email.PNG",
     "images/writeup/internship/hidrogen/web.PNG",
     "images/writeup/internship/hidrogen/hidrogen.PNG",
-    "images/writeup/internship/hidrogen/hidrogen.PNG - Shortcut.lnk",
     "images/writeup/internship/hidrogen/challenge.PNG",
-    "images/writeup/internship/hidrogen/web.png.~tmp",
-    "images/writeup/internship/hidrogen/web.png",
     "img/writeup/internship/hidrogen/web.png.md",
-    "img/writeup/internship/hidrogen",
-    "img/writeup/internship",
-    "img/writeup",
-    "img",
     "images/writeup/internship/hidrogen/web.png.md",
-    "images/writeup/internship/hidrogen",
-    "images/writeup/internship",
     "writeup/hackthebox/visual.md",
     "writeup/hackthebox/drive.md",
     "writeup.md",

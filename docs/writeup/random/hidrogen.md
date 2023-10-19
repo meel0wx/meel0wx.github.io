@@ -1,16 +1,17 @@
 # - Hidrogen
 
+So today we will be doing a challenge on Hidrogen Boot2Root machine. For this machine, it is about a wordpress CMS exploitation and privesc of root using `/usr/bin/man`. Let's dig in.
+
 ![](/images/writeup/internship/hidrogen/challenge.PNG)
 ## Reconnaissance
 
-Boot2Root Challenge `IP = 192.168.8.118`
+`IP = 192.168.8.118`
+
+Access the website and we get this. It said to state the domain name. So we write it in `/etc/hosts` and give a random name 
 
 ![](/images/writeup/internship/hidrogen/web.PNG)
 
-```bash
-## Internship NBS
-192.168.8.118   hidrogen.netbytesec.com
-```
+`192.168.8.118   hidrogen.netbytesec.com`
 
 ![](/images/writeup/internship/hidrogen/hidrogen.PNG)
 
@@ -217,7 +218,6 @@ Trying john / justin Time: 00:00:19 <          > (130 / 1705)  7.62%  ETA: ??:??
 We got `john:justin` as a login into the wordpress database. 
 
 ![](/images/writeup/internship/hidrogen/wordpressdashboard.PNG)
-
 ## Exploitation
 
 There are 2 ways that we can use to obtain the others flag. We use the same credentials to access the `ssh` service and we get in.
@@ -263,9 +263,7 @@ Then we can collect the `flag3.txt` right away
 ### First Way
 #### Foothold - RCE
 
-Back to the WordPress, the best practice is we need to try any function of the website server, and try to understand it. Maybe it is vulnerable to file upload or change of file content or anything that can get us the remote code execution. Here is some writeup that may similar to this
-
-[https://medium.com/secjuice/apocalyst-ctf-writeup-ccf9e2afb145](https://medium.com/secjuice/apocalyst-ctf-writeup-ccf9e2afb145)
+Back to the WordPress, the best practice is we need to try any function of the website server, and try to understand it. Maybe it is vulnerable to file upload or change of file content or anything that can get us the remote code execution. Here is some writeup that may similar to this [https://medium.com/secjuice/apocalyst-ctf-writeup-ccf9e2afb145](https://medium.com/secjuice/apocalyst-ctf-writeup-ccf9e2afb145)
 
 ```bash
 <?php
@@ -438,7 +436,7 @@ User john may run the following commands on this host:
     (root) /usr/bin/man
 ```
 
-Making some research on how to run this, I found some interesting article [here](https://www.hackingarticles.in/linux-privilege-escalation-using-exploiting-sudo-rights/) or we can read on gtfobins site [https://gtfobins.github.io/gtfobins/man/](https://gtfobins.github.io/gtfobins/man/)
+Just ask our long-live friend, Google and making some research on how to run this, I found some interesting article [here](https://www.hackingarticles.in/linux-privilege-escalation-using-exploiting-sudo-rights/) or we can read on gtfobins site too [https://gtfobins.github.io/gtfobins/man/](https://gtfobins.github.io/gtfobins/man/)
 
 Give `sudo man man` and a man pager of man will be pop-up. So right now, we want to escape this. We just give command `!bash` and we get in into the root!!
 
@@ -506,7 +504,7 @@ User john may run the following commands on this host:
     (root) /usr/bin/man
 ```
 
-We can get all flag2, flag4 and flag5
+We can get all `flag2, flag4 and flag5`
 
 ```bash
 root@hydrogrencorp:/usr/share/man# find / -name "flag2.txt" 2>/dev/null
