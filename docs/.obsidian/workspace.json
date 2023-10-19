@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5693e9adfc2f8938",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "writeup/internship/hidrogen.md",
+                "file": "writeup/random/hidrogen.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeup/internship/hidrogen.md",
+                "file": "writeup/random/hidrogen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeup/internship/hidrogen.md",
+                "file": "writeup/random/hidrogen.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writeup/internship/hidrogen.md"
+                "file": "writeup/random/hidrogen.md"
               }
             }
           }
@@ -159,16 +146,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5693e9adfc2f8938",
+  "active": "b870eb763c81bd52",
   "lastOpenFiles": [
+    "images/writeup/internship/hidrogen/getin2.gif",
+    "images/writeup/internship/hidrogen/getin2.gif.crdownload",
+    "images/writeup/internship/hidrogen/in.gif",
+    "index.md",
+    "writeup/random/hidrogen.md",
+    "images/writeup/internship/hidrogen/wordpressdashboard.PNG",
+    "images/writeup/internship/hidrogen/wordpresslogin.PNG",
+    "Pasted image 20231018142902.png",
+    "images/writeup/internship/hidrogen/email.PNG",
     "images/writeup/internship/hidrogen/web.PNG",
     "images/writeup/internship/hidrogen/hidrogen.PNG",
     "images/writeup/internship/hidrogen/hidrogen.PNG - Shortcut.lnk",
-    "Pasted image 20231018142902.png",
     "images/writeup/internship/hidrogen/challenge.PNG",
     "images/writeup/internship/hidrogen/web.png.~tmp",
     "images/writeup/internship/hidrogen/web.png",
-    "writeup/internship/hidrogen.md",
     "img/writeup/internship/hidrogen/web.png.md",
     "img/writeup/internship/hidrogen",
     "img/writeup/internship",
@@ -178,12 +172,9 @@
     "images/writeup/internship/hidrogen",
     "images/writeup/internship",
     "images/writeup",
-    "images",
     "image/hidrogen/Pasted image 20231018133025.png",
-    "index.md",
     "writeup/hackthebox/visual.md",
     "writeup/hackthebox/drive.md",
-    "img/meel0wx.png",
     "writeup.md",
     "volatility.md"
   ]
