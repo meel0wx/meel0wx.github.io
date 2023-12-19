@@ -1,4 +1,19 @@
-# - Hidrogen
+---
+date:
+  created: 2023-12-19
+  updated: 2023-12-19
+description: Hidrogen Writeup
+tags:
+  - ftp
+  - wpscan
+  - rce
+  - linpeas
+  - gtfobins
+  - mysql
+comments: true
+---
+
+# Hidrogen
 
 So today we will be doing a challenge on Hidrogen Boot2Root machine. For this machine, it is about a wordpress CMS exploitation and privesc of root using `/usr/bin/man`. Let's dig in.
 

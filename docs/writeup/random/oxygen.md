@@ -1,4 +1,14 @@
-# - Oxygen
+---
+date:
+  created: 2023-12-19
+  updated: 2023-12-19
+description: Oxygen Writeup
+tags:
+  - apache-struts
+comments: true
+---
+
+# Oxygen
 
 Today we will doing Boot2Root machine, Oxygen.
 

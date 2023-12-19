@@ -1,4 +1,4 @@
-# - Nitrogen
+# Nitrogen
 
 
 ## Reconnaissance

@@ -1,3 +1,13 @@
+---
+date:
+  created: 2023-12-19
+  updated: 2023-12-19
+description: Volatility Notes
+tags:
+  - cheatsheet
+comments: true
+---
+
 #### Listing Processes 
 ```
 windows.pslist.PsList

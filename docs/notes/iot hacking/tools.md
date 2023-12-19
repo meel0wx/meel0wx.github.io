@@ -1,3 +1,13 @@
+---
+date:
+  created: 2023-12-19
+  updated: 2023-12-19
+description: Iot Hacking Notes
+tags:
+  - cheatsheet
+comments: true
+---
+
 ### Software Tools
 
 - Analysis Frameworks

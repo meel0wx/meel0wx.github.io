@@ -1,20 +1,30 @@
-site_name: meel0wx
-plugins:
-  - tags
+site_name: meel0wx's Blog
+repo_url: https://github.com/meel0wx/meel0wx.github.io
+repo_name: meel0wx/meel0wx.github.io
 theme:
   name: material
+  logo: assets/android-chrome-192x192.png
+  favicon: assets/favicon.ico
+  # custom_dir: ovverides
   features:
-    - navigation.tabs
-    - navigation.sections
-    - toc.integrate
+    # - navigation.tabs
+    # - navigation.sections
+    # - toc.integrate
     - navigation.top
-    - search.suggest
-    - search.highlight
-    - content.tabs.link
-    - content.code.annotation
-    - content.code.copy
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.footer
+    # - search.suggest
+    # - search.highlight
+    # - content.tabs.link
+    # - content.code.annotation
+    # - content.code.copy
   language: en
   icon:
+    logo: brand/logo
+    repo: fontawesome/brands/github
     tag:
       html: fontawesome/brands/html5
       js: fontawesome/brands/js
@@ -22,16 +32,20 @@ theme:
   palette:
     - scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/brightness-7
         name: Switch to dark mode
       primary: carbon
       accent: purple
     - scheme: slate
       toggle:
-        icon: material/toggle-switch
+        icon: material/brightness-4
         name: Switch to light mode
       primary: carbon
       accent: lime
+
+# nav:
+#   - Home: index.md
+
 
 extra:
   social:
@@ -39,12 +53,20 @@ extra:
       link: https://github.com/meel0wx
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/meel0wx
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/abdullahalbaihaqi
+    # - icon: fontawesome/brands/linkedin
   tags:
     HTML5: html
     JavaScript: js
     CSS: css
+
+plugins:
+  - search:
+      lang: en
+  - tags:
+      tags_file: tags.md
+  - git-revision-date-localized:
+      enable_creation_date: true
+  
 
 markdown_extensions:
   - pymdownx.highlight:
