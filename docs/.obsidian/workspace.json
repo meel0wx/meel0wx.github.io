@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writeup/tryhackme/machines/easy/bountyhacker.md",
+                "file": "writeup/random/butane.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeup/tryhackme/machines/easy/bountyhacker.md",
+                "file": "writeup/random/butane.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeup/tryhackme/machines/easy/bountyhacker.md",
+                "file": "writeup/random/butane.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writeup/tryhackme/machines/easy/bountyhacker.md"
+                "file": "writeup/random/butane.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "50af1a8a36c7b8ed",
   "lastOpenFiles": [
+    "writeup/tryhackme/machines/easy/bountyhacker.md",
     "writeup/tryhackme/machines/easy/basicpentesting.md",
     "writeup/hackthebox/machines/easy/codify.md",
     "writeup/hackthebox/machines/easy/analytics.md",
@@ -179,7 +180,6 @@
     "train/portswigger",
     "train/picoctf",
     "train/hackthebox challenges",
-    "writeup/tryhackme/machines/easy/bountyhacker.md",
     "writeup/hackthebox/fortresses/jet.md",
     "writeup/hackthebox/machines.md",
     "notes/cryptography/cheatsheet.md",

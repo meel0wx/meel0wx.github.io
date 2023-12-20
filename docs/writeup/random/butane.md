@@ -1,14 +1,13 @@
 ---
 date:
   created: 2023-12-19
-  updated: 2023-12-19
+  updated: 2023-12-20
 description: Butane Writeup
 tags:
   - udp
   - snmpwalk
   - linpeas
   - lse
-  - pnwkit
 comments: true
 ---
 

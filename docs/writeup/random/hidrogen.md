@@ -239,7 +239,7 @@ Here we can see, we got `john:justin` as a login into the wordpress database. Th
 
 In this WordPress, the best practice is we need to try any function of the website server, and try to understand it. Maybe it is vulnerable to file upload or change of file content or anything that can get us the remote code execution. Here is some writeup that I found might be interesting to look on [https://medium.com/secjuice/apocalyst-ctf-writeup-ccf9e2afb145](https://medium.com/secjuice/apocalyst-ctf-writeup-ccf9e2afb145)
 
-```bash
+```bash title="phpreverseshell.php"
 <?php
 // php-reverse-shell - A Reverse Shell implementation in PHP
 // Copyright (C) 2007 pentestmonkey@pentestmonkey.net
