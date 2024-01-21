@@ -1,2 +1,2 @@
 # meel0wx.github.io
-My personal blog, research and CTF writeup
+My personal blog and CTF writeup
